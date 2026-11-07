@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex — AI Virtual Assistant</title>
+  <link rel="shortcut icon" href="https://img.freepik.com/premium-photo/3d-ai-assistant-icon-artificial-intelligence-virtual-helper-logo-illustration_762678-41196.jpg" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Style.css" />
+</head>
+<body>
+
+  <!-- Background grid -->
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-mark">AX</div>
+    <div class="header-info">
+      <span id="clock">--:--:--</span>
+      <span class="separator">|</span>
+      <span id="dateLine">---</span>
+    </div>
+    <div id="batteryDisplay" class="battery-chip">🔋 --</div>
+  </header>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Avatar section -->
+    <div class="avatar-wrap">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="ring ring-3"></div>
+      <video id="myVideo" autoplay muted loop playsinline>
+        <source src="alex.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Title -->
+    <div class="title-block">
+      <h1>I'm <span class="name-highlight">Alex</span></h1>
+      <p class="subtitle">Your AI-Powered <span class="va-text">Virtual Assistant</span></p>
+    </div>
+
+    <!-- Status badge -->
+    <div id="statusBadge" class="status-badge idle">
+      <span class="status-dot"></span>
+      <span id="statusText">Idle — Press Start</span>
+    </div>
+
+    <!-- Mic button -->
+    <button id="btn" aria-label="Activate microphone">
+      <div class="mic-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+          <line x1="12" y1="19" x2="12" y2="23"/>
+          <line x1="8" y1="23" x2="16" y2="23"/>
+        </svg>
+      </div>
+      <span id="content">Start Assistant</span>
+    </button>
+
+    <!-- Wake hint -->
+    <p class="wake-hint" id="wakeHint">Say <strong>"Hey Alex"</strong> to wake me up</p>
+
+    <!-- Command log -->
+    <div class="log-panel" id="logPanel">
+      <div class="log-header">
+        <span class="log-title">COMMAND LOG</span>
+        <button class="clear-btn" onclick="clearLog()">CLEAR</button>
+      </div>
+      <div class="log-entries" id="logEntries">
+        <div class="log-entry system">System ready. Awaiting voice input…</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Capability chips -->
+  <section class="capabilities">
+    <div class="cap-chip">🌐 Open Sites</div>
+    <div class="cap-chip">🔍 Web Search</div>
+    <div class="cap-chip">🕒 Time & Date</div>
+    <div class="cap-chip">🔋 Battery</div>
+    <div class="cap-chip">🎵 Music</div>
+    <div class="cap-chip">💬 Q&amp;A</div>
+  </section>
+
+  <audio id="assistantAudio" src="powerup.mp3"></audio>
+
+  <script src="Script.js"></script>
+</body>
+</html>
